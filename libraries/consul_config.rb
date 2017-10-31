@@ -48,11 +48,6 @@ module ConsulCookbook
       attribute(:addresses, kind_of: [Hash, Mash])
       attribute(:advertise_addr, kind_of: String)
       attribute(:advertise_addr_wan, kind_of: String)
-      attribute(:atlas_acl_token, kind_of: String)
-      attribute(:atlas_infrastructure, kind_of: String)
-      attribute(:atlas_join, equal_to: [true, false])
-      attribute(:atlas_token, kind_of: String)
-      attribute(:atlas_endpoint, kind_of: String)
       attribute(:autopilot, kind_of: [Hash, Mash])
       attribute(:bind_addr, kind_of: String)
       attribute(:bootstrap, equal_to: [true, false])
@@ -93,7 +88,6 @@ module ConsulCookbook
       attribute(:reap, equal_to: [true, false])
       attribute(:reconnect_timeout, kind_of: String)
       attribute(:reconnect_timeout_wan, kind_of: String)
-      attribute(:recursor, kind_of: String)
       attribute(:recursors, kind_of: Array)
       attribute(:retry_interval, kind_of: String)
       attribute(:retry_interval_wan, kind_of: String)
@@ -102,8 +96,8 @@ module ConsulCookbook
       attribute(:retry_join_wan, kind_of: Array)
       attribute(:retry_max, kind_of: Integer)
       attribute(:rejoin_after_leave, equal_to: [true, false])
-      attribute(:serf_lan_bind, kind_of: String)
-      attribute(:serf_wan_bind, kind_of: String)
+      attribute(:serf_lan, kind_of: String)
+      attribute(:serf_wan, kind_of: String)
       attribute(:server, equal_to: [true, false])
       attribute(:server_name, kind_of: String)
       attribute(:session_ttl_min, kind_of: String)
@@ -145,11 +139,6 @@ module ConsulCookbook
           addresses
           advertise_addr
           advertise_addr_wan
-          atlas_acl_token
-          atlas_endpoint
-          atlas_infrastructure
-          atlas_join
-          atlas_token
           autopilot
           bind_addr
           check_update_interval
@@ -185,7 +174,6 @@ module ConsulCookbook
           raft_protocol
           reconnect_timeout
           reconnect_timeout_wan
-          recursor
           recursors
           rejoin_after_leave
           retry_interval
@@ -194,17 +182,14 @@ module ConsulCookbook
           retry_join_ec2
           retry_join_wan
           retry_max
-          serf_lan_bind
-          serf_wan_bind
+          serf_lan
+          serf_wan
           server
           server_name
           session_ttl_min
           skip_leave_on_interrupt
           start_join
           start_join_wan
-          statsd_addr
-          statsite_addr
-          statsite_prefix
           syslog_facility
           telemetry
           tls_cipher_suites
